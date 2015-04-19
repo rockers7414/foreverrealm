@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="/css/jquery.jqplot.min.css" />
+		<link type="text/css" rel="stylesheet" href="/css/index.css" />
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.jqplot.min.js"></script>
+		<script type="text/javascript" src="/js/jqplot.pieRenderer.min.js"></script>
+		{% if isadmin %}
+		<script type="text/javascript" src="/js/admin.js"></script>
+		{% else %}
+		<script type="text/javascript" src="/js/index.js"></script>
+		{% endif %}
+		<title>永恆境界官方網站 ForeverRealm</title>
+	</head>
+	<body>
+		<div id="logoutdiv">{% if isadmin %} 血盟管理員 {% else %} 血盟成員 {% endif %}, 您好 | <a id="logout" href="javascript:void(0);">登出</a></div>
+		<div id="main">
+			<div id="logo">
+				<a href="/"><img src="/css/FR_LOGO.jpg"></a>
+			</div>
+			<div id="menu">
+				<ul>
+					<li><a id="levelsort" href="javascript:void(0);">排行榜</a></li>
+					<li><a id="jobratio" href="javascript:void(0);">職業比例</a></li>
+					<li><a id="claninfo" href="javascript:void(0);">血盟資料</a></li>
+					<li><a id="file" href="javascript:void(0);">檔案下載</a></li>
+					{% if isadmin %}
+					<li><a id="adddata" href="javascript:void(0);">新增血盟成員資料</a></li>
+					{% endif %}
+				</ul>
+			</div>
+			<div id="center">{{ center }}</div>
+			<div id="footer">
+				<p>建議使用Google Chrome, Firefox瀏覽本網站<br/>
+				Copyright© 2012 RCK All Rights Reserved.</p>
+			</div>
+		</div>
+	</body>
+</html>
